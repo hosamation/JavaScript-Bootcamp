@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.assignment {
+  position: relative;
+  width: fit-content;
+  padding: 10px 10px 0;
+  margin: 20px auto 10px;
+  text-align: center;
+  overflow: hidden;
+}
+.assignment::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #00000011;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.assignment:hover::before {
+  animation: flashing 1s;
+  -webkit-animation: flashing 1s;
+}
+.assignment img {
+  width: 120px;
+  transition-duration: 0.3s;
+}
+.assignment:hover img {
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+}
+.console {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+.console h3{
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px 10px;
+  overflow: hidden;
+  border: 2px solid #000;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  animation: 
+    typing 3.5s steps(30, end);
+  -webkit-animation:
+    typing 3.5s steps(30, end);
+}
+@keyframes flashing {
+  0%, 40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
